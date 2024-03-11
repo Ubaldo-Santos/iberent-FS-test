@@ -1,6 +1,11 @@
 <?php
 
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Sanctum\HasApiTokens;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +21,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/products', 'ProductController@index');
-Route::get('/products/{id}', 'ProductController@show');
-Route::post('/products', 'ProductController@store');
-Route::put('/products/{id}', 'ProductController@update');
-Route::delete('/products/{id}', 'ProductController@destroy');
